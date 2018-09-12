@@ -1,10 +1,12 @@
+#include <stdio.h>
+
 /**
-* main - entry point
+* main - Entry point
 *
-* return - always 0 (means success)
+* Return: Always 0 (success)
 */
 
-int main()
+int main(void)
 {
 	return (0);
 }
