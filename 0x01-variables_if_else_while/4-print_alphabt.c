@@ -3,7 +3,7 @@
 /**
  * main - entry point for program
  *
- * Description: print lower and uppercase chars
+ * Description: print lowercase letters except 'e' and 'q'
  *
  * Return: always 0 (success)
  */
