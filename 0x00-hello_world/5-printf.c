@@ -1,7 +1,14 @@
 #include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (success)
+ */
 
-int main()
+int main(void)
 {
-    printf("%s\n", "with proper grammar, but the outcome is a piece of art,");    
-    return (0);
-} 
+	char st[60] = "with proper grammar, but the outcome is a piece of art,";
+
+	printf("%s\n", st);
+	return (0);
+}
