@@ -1,8 +1,11 @@
 #include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (success)
+ */
 
-/* Note: a long long int is also referred to as a double and %lu means long, unsigned, decmical integer*/
-
-int main()
+int main(void)
 {
 
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
