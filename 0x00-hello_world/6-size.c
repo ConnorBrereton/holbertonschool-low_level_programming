@@ -2,6 +2,8 @@
 /**
  * main - Entry point
  *
+ * Description: prints the size of the different variable types in C
+ *
  * Return: Always 0 (success)
  */
 int main(void)
