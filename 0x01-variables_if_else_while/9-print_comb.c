@@ -3,7 +3,7 @@
 /**
  * main - entry point for program
  *
- * Description: print all possible combinations of single-digit numbers separated by comma in asc order using putchar
+ * Description: print all digits trailed by a ,
  *
  * Return: always 0 (success)
  */
