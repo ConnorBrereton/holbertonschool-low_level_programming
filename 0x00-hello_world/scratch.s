@@ -1,4 +1,4 @@
-	.file	"main.c"
+	.file	"scratch.c"
 	.text
 	.globl	main
 	.type	main, @function
