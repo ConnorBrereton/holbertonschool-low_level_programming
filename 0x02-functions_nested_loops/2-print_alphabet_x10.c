@@ -8,7 +8,7 @@
  * Return: Always 0.
  */
 
-int main(void)
+void print_alphabet_x10(void)
 {
 	int i, count = 9;
 	char c[] = "abcdefghijklmnopqrstuvqxyz";
@@ -20,5 +20,4 @@ int main(void)
 		_putchar('\n');
 		count--;
 	}
-	return (0);
 }
