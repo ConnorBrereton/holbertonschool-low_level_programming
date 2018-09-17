@@ -5,7 +5,7 @@
  *
  * @c: Variable for given char
  *
- * Description: Check if @c is low-alpha using _isalpha
+ * Description: Check if @c is low-alpha using _islower
  *
  * Return: 1 if lower. 0 else
  */
