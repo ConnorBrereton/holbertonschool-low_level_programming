@@ -25,7 +25,7 @@ void jack_bauer(void)
 	{
 		right_hour = 0;
 
-		while (right_hour < 4)
+		while (right_hour <= 9)
 		{
 			if (right_hour > 3 && left_hour == 2)
 				break;
