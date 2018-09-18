@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_alphabet_x10 - print alphabet 10x
  *
  * desc - print low-alpha 10x
  *
