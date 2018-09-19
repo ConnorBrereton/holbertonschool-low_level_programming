@@ -1,27 +1,39 @@
 #include "holberton.h"
 
 /**
- * times_table - prints nxn (0..9) * (0 ** 9) table 
+ * times_table - see README.md
  *
- * @i: holds the "i" value 
- *
- * @j: holds the "j" value
- *
- * description: print the 9 times table, starting with 0
- *
- * Return: Void fcn so no value
+ * Return: Nonapplicable
  */
 
 void times_table(void)
 {
 	int i, j, sum;
 
-	for (i = 48; i < 57; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 48; j < 57; j++)
+		for (j = 0; j < 10; j++)
 		{
-			sum = (i * j) % 10;
-			_putchar(sum + '0');
+			sum = i * j;
+			if (j == 0)
+			{
+				_putchar(sum + '0');
+			}
+			else if (sum < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(sum + '0');
+			}
+			else if (sum >= 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(sum / 10 + '0');
+				_putchar(sum % 10 + '0');
+			}
 		}
+		_putchar('\n');
 	}
 }
