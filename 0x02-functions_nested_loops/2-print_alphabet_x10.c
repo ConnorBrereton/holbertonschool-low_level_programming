@@ -10,13 +10,12 @@
 
 void print_alphabet_x10(void)
 {
-	int i, count = 9;
-	char c[] = "abcdefghijklmnopqrstuvwxyz";
+	int i, count = 10;
 
-	while (count > -1)
+	while (count > 0)
 	{
-		for (i = 0; i < 28; i++)
-			_putchar(c[i]);
+		for (i = 97; i <= 122; i++)
+			_putchar(i);
 		_putchar('\n');
 		count--;
 	}
