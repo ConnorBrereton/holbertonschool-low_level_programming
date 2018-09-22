@@ -1,9 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_line - puts 'n' lines
- *
- * @n: passed as argument
+ * print_square - print square (size x size)
  *
  * Return: none
  */
