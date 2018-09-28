@@ -7,7 +7,7 @@
  *
  * @n: byte size
  *
- * Return: new string
+ * Return: @dest (sucess), 0 (failure)
  */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -17,6 +17,9 @@ char *_strncpy(char *dest, char *src, int n)
 
 	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
+		if (src[0] == '\0')
+			return (0);
+
 		dest[i] = src[i];
 	}
 	end = i;
