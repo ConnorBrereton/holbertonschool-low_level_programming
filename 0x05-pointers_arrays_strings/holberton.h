@@ -6,5 +6,6 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *cap_string(char *);
 int has_character(char marker);
-char leeter(char);
+char *leet(char *s);
+char create_leet(char string);
 char *rot13(char *);
