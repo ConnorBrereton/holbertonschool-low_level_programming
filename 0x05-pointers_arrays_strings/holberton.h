@@ -1,3 +1,4 @@
+int _putchar(char c);
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
 char *_strncpy(char *dest, char *src, int n);
@@ -9,3 +10,6 @@ int has_character(char marker);
 char *leet(char *s);
 char create_leet(char string);
 char *rot13(char *);
+void print_number(int n);
+void positive(unsigned int n);
+void negative(int n);
