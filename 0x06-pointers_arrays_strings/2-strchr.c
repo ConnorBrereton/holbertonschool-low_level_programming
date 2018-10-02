@@ -1,4 +1,4 @@
-#define NULL 0
+#include <stdio.h>
 
 /**
  * *_strchr - strchr() w/o stdlib
@@ -11,7 +11,7 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i]; i++)
 	{
 		if (s[i] == c) /* found char */
 		{
