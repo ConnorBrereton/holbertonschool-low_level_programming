@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 
 	for (i = 0; s[i]; i++)
 	{
-		if ((char) c == s[i]) /* found char */
+		if (s[i] == c) /* found char */
 		{
 			return ((char *) &s[i]); /* returns contents @ position */
 		}
