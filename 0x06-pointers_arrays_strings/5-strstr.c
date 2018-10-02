@@ -12,8 +12,9 @@ int match(char *haystack, char *needle)
 	while (*haystack && *needle)
 	{
 		if (*haystack != *needle)
+		{
 			return (0);
-
+		}
 		haystack++;
 		needle++;
 	}
