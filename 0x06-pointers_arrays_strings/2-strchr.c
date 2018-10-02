@@ -1,3 +1,5 @@
+#define NULL 0
+
 /**
  * *_strchr - strchr() w/o stdlib
  * @s: pointer to string
@@ -16,5 +18,5 @@ char *_strchr(char *s, char c)
 			return ((char *) &s[i]); /* returns contents @ position */
 		}
 	}
-	return ('\0');
+	return (NULL);
 }
