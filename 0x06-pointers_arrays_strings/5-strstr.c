@@ -33,7 +33,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	if (!*needle)
 		return (haystack);
-	
+
 	while (*haystack != '\0')
 	{
 		if ((*haystack == *needle) && match(haystack, needle))
