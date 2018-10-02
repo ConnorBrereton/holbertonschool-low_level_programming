@@ -17,7 +17,7 @@ int match(char *haystack, char *needle)
 		haystack++;
 		needle++;
 	}
-	return (*needle == '\0');
+	return (1);
 }
 
 
