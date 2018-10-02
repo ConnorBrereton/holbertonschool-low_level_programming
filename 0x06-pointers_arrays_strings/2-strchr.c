@@ -11,11 +11,11 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c) /* found char */
 		{
-			return ((char *) &s[i]); /* returns contents @ position */
+			return ((char *) &s[i]);
 		}
 	}
 	return (NULL);
