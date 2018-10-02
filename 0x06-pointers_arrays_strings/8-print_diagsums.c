@@ -11,13 +11,15 @@
 void print_diagsums(int *a, int size)
 {
 	int i, j;
-	int dump1, dump2;
-	dump1 = dump2 = 0;
+	int output1, output2;
+	output1 = output2 = 0;
 
-	for (i = 0; i < size; i++)
+	int max = size * size;
+
+	for (i = 0; i < max; i++)
 		dump1 += a[i];
 
-	for (j = 0; j < size; j++)
+	for (j = 0; j < max; j++)
 		dump2 += a[j];
 
 	printf("%d, ", dump1);
