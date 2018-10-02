@@ -12,9 +12,8 @@ int match(char *haystack, char *needle)
 	while (*haystack && *needle)
 	{
 		if (*haystack != *needle)
-		{
 			return (0);
-		}
+
 		haystack++;
 		needle++;
 	}
@@ -32,6 +31,9 @@ int match(char *haystack, char *needle)
 
 char *_strstr(char *haystack, char *needle)
 {
+	if (!*needle)
+		return (haystack);
+	
 	while (*haystack != '\0')
 	{
 		if ((*haystack == *needle) && match(haystack, needle))
