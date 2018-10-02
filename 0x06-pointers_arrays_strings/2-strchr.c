@@ -17,6 +17,10 @@ char *_strchr(char *s, char c)
 		{
 			return ((char *) &s[i]); /* returns contents @ position */
 		}
+		if (s[i] == c) /* edge case */
+		{
+			return ('\0');
+		}
 	}
 	return (NULL);
 }
