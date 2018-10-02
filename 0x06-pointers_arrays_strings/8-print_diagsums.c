@@ -11,17 +11,16 @@
 void print_diagsums(int *a, int size)
 {
 	int i, j;
-	int output1, output2;
-	output1 = output2 = 0;
+	int sum1 = 0;
+	int sum2 = 0;
 
-	int max = size * size;
+	for (i = 0; i < size * size; i = i + (size + 1)) /* confines rows */
+		sum1 += a[i];
+		
+	for (j = 0; j < size * size; j = j + (size - 1)) /* confines columns */
+		sum2 += a[j];
 
-	for (i = 0; i < max; i++)
-		dump1 += a[i];
 
-	for (j = 0; j < max; j++)
-		dump2 += a[j];
-
-	printf("%d, ", dump1);
-	printf("%d\n", dump2);
+	printf("%d, ", sum1);
+	printf("%d\n", sum2);
 }
