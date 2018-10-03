@@ -8,7 +8,7 @@
 
 void _puts_recursion(char *s)
 {
-	while (!*s) /* base case: end of string */
+	if (!*s) /* base case: end of string */
 	{
 		_putchar('\n');
 		return;
