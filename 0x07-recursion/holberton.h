@@ -8,4 +8,5 @@ int root_compute(int a, int b);
 int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int is_prime(int a, int b);
+int validate(int a, int z, char *s);
 int is_palindrome(char *s);
