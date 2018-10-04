@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * is_prime_number - returns 1 if number is prime
+ * @n: variable for the number
+ * Return: 1 (prime) 0 (invalid/nonprime)
  */
 
 int is_prime_number(int n)
@@ -21,9 +21,10 @@ int is_prime_number(int n)
 
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * is_prime - computes prime by comparison
+ * @a: checks if dividable
+ * @b: checks if multiple
+ * Return: 1 (prime) 0 (invalid/nonprime)
  */
 
 int is_prime(int a, int b)
