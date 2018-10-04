@@ -1,49 +1,76 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * is_palindrome - recursively checks if string is palindrome
+ * @s: pointer to string to check
+ * Return: 1 (valid) 0 (invalid)
  */
 
 int is_palindrome(char *s)
 {
-	/* empty string is palindrome */
-	if (*s == 0)
+	int null_char;
+	char *end;
+
+	/* base case */
+	if (*s == '\0')
 	{
 		return (1);
 	}
 
-	/* iterate by "shrinking" */
-	else if (validate())
-	{
-		return (1);
-	}
-
-	/* common case: failure */
+	/* recursive case */
 	else
 	{
-		return (0);
+		/* goto null char to prevent empty case */
+		null_char = go_to_end(s);
+
+		/* sets pointer to the last character */
+		end  = (s + (null_char - 1));
+
+		/* execute recursion */
+		return (validate(s, end));
 	}
 }
 
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * go_to_end - sets postion of end of string for other functions
+ * @end: pointer to NULL char
+ * Return: last index (SUCCESS) 0 (FAIL)
  */
 
-int validate(int a, int z, char *s)
+int go_to_end(char *end)
 {
-	/* check breakpoint */
-	if (s[a] != s[z])
+	/* case: empty */
+	if (*end == '\0')
 	{
 		return (0);
 	}
 
-	/* case: meet in middle */
-	else if (a == z)
+	/* iterate to NULL character */
+	else
+	{
+		return (1 + go_to_end(end + 1));
+	}
+}
+
+
+/**
+ * validate - executes iterations
+ * @beginning: pointer to front of string
+ * @end: pointer to end of string
+ * Return: Always 0.
+ */
+
+int validate(char *beginning, char *end)
+{
+	/* check for breakpoint */
+	if (*beginning != *end)
+	{
+		return (0);
+	}
+
+	/* matching in middle (SUCCESS) */
+	else if (*beginning == *end)
 	{
 		return (1);
 	}
@@ -51,6 +78,6 @@ int validate(int a, int z, char *s)
 	/* execute recursion */
 	else
 	{
-		return (validate(a++, z--, s));
+		return (validate(beginning++, end--));
 	}
 }
