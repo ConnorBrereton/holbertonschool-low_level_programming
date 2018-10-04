@@ -63,14 +63,14 @@ int go_to_end(char *end)
 
 int validate(char *beginning, char *end)
 {
-	/* check for breakpoint */
+	/* check values dont match */
 	if (*beginning != *end)
 	{
 		return (0);
 	}
 
-	/* matching in middle (SUCCESS) */
-	else if (*beginning == *end)
+	/* check that pointers cross */
+	if (beginning > end)
 	{
 		return (1);
 	}
@@ -78,6 +78,6 @@ int validate(char *beginning, char *end)
 	/* execute recursion */
 	else
 	{
-		return (validate(beginning++, end--));
+		return (validate(++beginning, --end));
 	}
 }
