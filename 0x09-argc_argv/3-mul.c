@@ -5,7 +5,7 @@
  * main - multiplies two numbers passed as argument
  * @argc: the size of the array to hold the command line args
  * @argv: pointer to array that holds the arguments
- * Return: 0 (success) -1 (failure)
+ * Return: 0 (success) 1 (failure)
  */
 
 int main(int argc, char *argv[])
@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
 	int sum = 0;
 
 	/* check that 2 numbers entered*/
-	if (argc < 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
-		return (-1);
+		return (1);
 	}
 
 	a = atoi(argv[1]);
