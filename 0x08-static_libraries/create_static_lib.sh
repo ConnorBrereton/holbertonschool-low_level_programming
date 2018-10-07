@@ -1,4 +1,4 @@
 #!/bin/bash
 gcc -c *.c
-ar libholberton.a *.o
+ar rc libholberton.a *.o
 ranlib libholberton.h
