@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int a = 0;
 	int b = 0;
-	int sum = 0;
+	int result = 0;
 
 	/* check that 2 numbers entered*/
 	if (argc != 3)
@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 
 	a = atoi(argv[1]);
 	b = atoi(argv[2]);
+	result = a * b;
+	printf("%d\n", result);
 
-	sum = a * b;
-
-	printf("%d\n", sum);
+	return (0);
 }
