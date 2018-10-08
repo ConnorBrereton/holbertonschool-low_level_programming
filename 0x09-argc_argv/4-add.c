@@ -13,25 +13,18 @@ int main(int argc, char *argv[])
 	int i;
 	int sum = 0;
 
-	if (argc <= 1)
+	/* add each valid argv index */
+	for (i = 1; i < argc; i++)
 	{
-		printf("%d\n", 0);
-	}
-
-	else
-	{
-		/* add each valid argv index */
-		for (i = 1; i < argc; i++)
+		if (!atoi(argv[i]))
 		{
-			if (!atoi(argv[i]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-
-			sum = sum + atoi(argv[i]);
+			printf("Error\n");
+			return (1);
 		}
-		printf("%d\n", sum);
-		return (0);
+
+		sum = sum + atoi(argv[i]);
 	}
+
+	printf("%d\n", sum);
+	return (0);
 }
