@@ -9,7 +9,7 @@
 
 void free_grid(int **grid, int height)
 {
-	while (height-- >= 0) /* start at last index and iterate up */
+	while (height-- > 0) /* start at last index and iterate up */
 	{
 		free(grid[height]); /* free the row's memory */
 	}
