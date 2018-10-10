@@ -5,41 +5,41 @@
  * @width: width of the grid
  * @height: height of the grid
  *
- * Return: the grid @arr
+ * Return: the grid @grid
  */
 
 int **alloc_grid(int width, int height)
 {
 	int i, j;
-	int **arr; /* helps us point to each height index */
+	int **grid; /* helps us point to each height index */
 
 	if (width <= 0 || height <= 0) /* check invalid dimensions */
 		return (NULL);
 
-	arr = malloc(sizeof(int *) * height); /* allocate j-axis memory */
+	grid = malloc(sizeof(int *) * height); /* allocate j-axis memory */
 
-	if (arr == NULL) /* if no memory */
+	if (grid == NULL) /* if no memory */
 		return (NULL);
 
 	for (i = 0; i < height; i++) /* loop down rows */
 	{
-		arr[i] = malloc(sizeof(int) * width); /* set memory for row */
+		grid[i] = malloc(sizeof(int) * width); /* set memory for row */
 
-		if (arr[i] == NULL) /* if row index has no memory */
+		if (grid[i] == NULL) /* if row index has no memory */
 		{
-			while (i-- >= 0) /* delete the entire array */
+			while (i-- >= 0) /* delete the entire griday */
 			{
-				free(arr[i]);
+				free(grid[i]);
 			}
-			free(arr);
+			free(grid);
 
 			return (NULL);
 		}
 
 		for (j = 0; j < width; j++) /* set each index to value "0" */
 		{
-			arr[i][j] = 0;
+			grid[i][j] = 0;
 		}
 	}
-	return (arr);
+	return (grid);
 }
