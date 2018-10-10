@@ -1,9 +1,10 @@
 #include <stdlib.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * *argstostr - concatenates CLI args without argc & argv
+ * @ac: argument count variable
+ * @av: ptr->ptr->argument values
+ * Return: ptr
  */
 
 char *argstostr(int ac, char **av)
