@@ -10,7 +10,8 @@
 
 int *array_range(int min, int max)
 {
-	int temp, len = 0;
+	int temp;
+	int len = 0;
 	int *ptr1;
 
 	if (min > max)
@@ -46,7 +47,7 @@ int *array_init(int *ptr2, int min, int max)
 {
 	int i = 0;
 
-	while (i <= max)
+	while (min <= max)
 	{
 		ptr2[i] = min;
 		i++;
