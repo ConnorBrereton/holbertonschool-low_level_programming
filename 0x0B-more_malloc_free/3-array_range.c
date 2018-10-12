@@ -28,7 +28,7 @@ int *array_range(int min, int max)
 	if (ptr1 == NULL)
 		return (NULL);
 
-	array_init(ptr1, min, max);
+	ptr1 = array_init(ptr1, min, max);
 
 	return (ptr1);
 }
