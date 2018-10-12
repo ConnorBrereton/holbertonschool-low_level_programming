@@ -4,3 +4,4 @@ void *_memset(char *temp1, unsigned int nmemb, unsigned int size, char nc);
 void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_init(int *ptr2, int min, int max);
 int *array_range(int min, int max);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
