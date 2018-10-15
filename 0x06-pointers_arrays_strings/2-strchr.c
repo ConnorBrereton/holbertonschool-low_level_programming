@@ -10,15 +10,20 @@
 char *_strchr(char *s, char c)
 {
 	int i;
+	char *temp;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i]; i++) /* normal case */
 	{
 		if (s[i] == c) /* found char */
 		{
-			return ((char *) &s[i]);
+			temp = &s[i];
+			break;
 		}
-		if (*(s + i) == c)
-			return (s + i);
 	}
-	return (NULL);
+
+	/* searching for null char */
+	if (s[i] == '\0' && c == '\0')
+		temp = &s[i];
+
+	return (temp);
 }
