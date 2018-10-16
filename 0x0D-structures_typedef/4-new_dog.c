@@ -51,7 +51,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	temp_owner = malloc(sizeof(char) * owner_size + 1); /* store `owner` */
 	if (temp_owner == NULL)
 	{
-		free(temp_owner);
+		free(temp_name);
 		free(new_struct);
 		return (NULL);
 	}
