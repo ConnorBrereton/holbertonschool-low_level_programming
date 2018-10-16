@@ -38,7 +38,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	name_size = _strlen(name); /* det. length of data to store */
 	owner_size = _strlen(owner);
 
-	temp_name = malloc(sizeof(char) * (name_size + 1)); /* store `name` */
+	temp_name = malloc(sizeof(char) * name_size + 1); /* store `name` */
 	if (temp_name == NULL)
 	{
 		free(new_struct);
@@ -46,10 +46,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	for (i = 0; i < name_size; i++)
-		*(temp_name + i) = *(name + i);
-	*(temp_name + i) = '\0';
+		temp_name[i] = name[i];
+	temp_name[i] = '\0';
 
-	temp_owner = malloc(sizeof(char) * (owner_size + 1)); /* store `owner` */
+	temp_owner = malloc(sizeof(char) * owner_size + 1); /* store `owner` */
 	if (temp_owner == NULL)
 	{
 		free(temp_owner);
@@ -58,8 +58,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	for (i = 0; i < owner_size; i++)
-		*(temp_owner + i) = *(owner + i);
-	*(temp_owner + i) = '\0';
+		temp_owner[i] = owner[i];
+	temp_owner[i] = '\0';
 
 	new_struct->name = temp_name; /* copy contents to `new_struct` and return */
 	new_struct->age = age;
