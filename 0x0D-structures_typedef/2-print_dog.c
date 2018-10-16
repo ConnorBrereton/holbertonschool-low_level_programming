@@ -15,10 +15,10 @@ void print_dog(struct dog *d)
 		return;
 
 	/* update value to "(nil)" if member is NULL */
-	else if (d->name == NULL)
+	if (d->name == NULL)
 		d->name = NIL;
 
-	else if (d->owner == NULL)
+	if (d->owner == NULL)
 		d->owner = NIL;
 
 	/* note: type age cannot hold (nil) */
