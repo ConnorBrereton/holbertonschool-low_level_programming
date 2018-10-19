@@ -10,12 +10,11 @@
 
 int main(int argc, char **argv)
 {
-	int i, end;
+	int i, end, opcode;
+	int (*ptr)(int, char **);
 
-	/* cast the pointer to the first byte of code */
-	unsigned char *opcode;
-
-	opcode = (unsigned char *) main;
+	/* sets function pointer to main */
+	ptr = main;
 
 	/* number of opcodes to print */
 	end = atoi(argv[1]);
@@ -23,19 +22,20 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
-	if (atoi(argv[1]) < 0)
+	if (end < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
 	/* prints each "chunk" of opcode */
-	for (i = 0; i < end && *(opcode + i) != '\0'; i++)
+	for (i = 0; i < end; i++)
 	{
-		printf("%.2x", *(opcode + i));
+		opcode = *(unsigned char *) (ptr + i);
+		printf("%.2x", opcode);
 
 		if (i < (end - 1))
 			putchar(' ');
