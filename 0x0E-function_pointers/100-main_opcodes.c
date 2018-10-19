@@ -26,13 +26,13 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(1);
+		return (1);
 	}
 
 	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
-		exit(2);
+		return (2);
 	}
 
 	/* prints each "chunk" of opcode */
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	{
 		printf("%.2x", *(opcode + i));
 
-		if (i != end)
+		if (i < (end - 1))
 			putchar(' ');
 	}
 	putchar('\n');
