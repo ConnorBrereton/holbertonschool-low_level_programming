@@ -12,12 +12,9 @@ int main(int argc, char **argv)
 {
 	int i, end;
 
-	/* 
-	 * cast the pointer to the first byte of code
-	 * (read: main) as a char in order to run
-	 * iterations on the code.
-	 */
+	/* cast the pointer to the first byte of code */
 	unsigned char *opcode;
+
 	opcode = (unsigned char *) main;
 
 	/* number of opcodes to print */
