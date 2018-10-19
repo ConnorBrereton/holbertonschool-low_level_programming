@@ -13,12 +13,6 @@ int main(int argc, char **argv)
 	int i, end, opcode;
 	int (*ptr)(int, char **);
 
-	/* sets function pointer to main */
-	ptr = main;
-
-	/* number of opcodes to print */
-	end = atoi(argv[1]);
-
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -31,14 +25,20 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
+	/* sets function pointer to main */
+	ptr = main;
+
+	/* number of opcodes to print */
+	end = atoi(argv[1]);
+
 	/* prints each "chunk" of opcode */
 	for (i = 0; i < end; i++)
 	{
-		opcode = *(unsigned char *) (ptr + i);
+		opcode = *(unsigned char *)(ptr + i);
 		printf("%.2x", opcode);
 
 		if (i < (end - 1))
-			putchar(' ');
+			printf(" ");
 	}
 	putchar('\n');
 	return (0);
