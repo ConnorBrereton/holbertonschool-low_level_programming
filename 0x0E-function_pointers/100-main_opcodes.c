@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 
-	if (end < 0)
+	else if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 		opcode = *(unsigned char *)(ptr + i);
 		printf("%.2x", opcode);
 
-		if (i < (end - 1))
+		if (i < end - 1)
 			printf(" ");
 	}
 	putchar('\n');
