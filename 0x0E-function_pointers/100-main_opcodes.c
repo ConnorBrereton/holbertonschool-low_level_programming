@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	/* prints each "chunk" of opcode */
 	for (i = 0; i < end && *(opcode + i) != '\0'; i++)
 	{
-		printf("%0.2x", *(opcode + i));
+		printf("%.2x", *(opcode + i));
 
 		if (i != end)
 			putchar(' ');
