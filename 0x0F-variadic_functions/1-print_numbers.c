@@ -30,14 +30,14 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			printf("%d%s", va_arg(list, int), separator);
 		}
-		printf("%d", va_arg(list, int));
+		printf("%d\n", va_arg(list, int));
 	}
 
 	/* case: parameters = 1 */
 	else
 	{
 		printf("%d", va_arg(list, int));
+		printf("\n");
 	}
-	printf("\n");
 	va_end(list);
 }
