@@ -23,7 +23,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(list, n);
 
 	/* case: parameters >1 */
-	if (*separator != '\0')
+	if (separator)
 	{
 		/* print num. sep. pattern */
 		for (i = 0; i < n - 1; i++)
