@@ -16,6 +16,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_list list;
 
+	if (n == 0)
+		return;
+
 	/* sets pointer to first parameter */
 	va_start(list, n);
 
