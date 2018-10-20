@@ -22,7 +22,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	/* sets pointer to first parameter */
 	va_start(list, n);
 
-	/* case: parameters >1 */
+	/* case: separator is not null */
 	if (separator)
 	{
 		/* print num. sep. pattern */
@@ -33,10 +33,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d\n", va_arg(list, int));
 	}
 
-	/* case: parameters = 1 */
+	/* case: separator is null */
 	else
 	{
-		printf("%d", va_arg(list, int));
+		for (i = 0; i < n; i++)
+		{
+			printf("%d", va_arg(list, int));
+		}
 		printf("\n");
 	}
 	va_end(list);
