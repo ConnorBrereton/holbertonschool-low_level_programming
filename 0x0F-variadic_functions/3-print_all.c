@@ -52,7 +52,7 @@ void _print_string(va_list params)
 	str = va_arg(params, char *);
 
 	if (!str)
-		printf("(nil)");
+		str = "(nil)";
 
 	printf("%s", str);
 }
