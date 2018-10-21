@@ -1,107 +1,100 @@
-#include "variadic_functions.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include "variadic_functions.h"
+
+void _print_char(va_list params);
+void _print_int(va_list params);
+void _print_float(va_list params);
+void _print_string(va_list params);
 
 /**
- * _print_char - prints char(s)
- * @stream: points to parameter input stream
- * Return: none
- */
+  * _print_char - prints characters
+  * @params: va_list declaration
+  * Return: none
+  */
 
-void _print_char(va_list stream)
+void _print_char(va_list params)
 {
-	char c;
-
-	c = va_arg(stream, int);
-	printf("%c", c);
+	printf("%c", va_arg(params, int));
 }
 
+/**
+  * _print_int - prints ints
+  * @params: va_list declaration
+  * Return: none
+  */
 
-/** _print_int - prints int(s)
- * @stream: points to parameter input stream
- * Return: none
- */
-
-void _print_int(va_list stream)
+void _print_int(va_list params)
 {
-        int i;
-
-	i = va_arg(stream, int);
-	printf("%d", i);
+	printf("%d", va_arg(params, int));
 }
 
+/**
+  * _print_float - prints floats
+  * @params: va_list declaration
+  * Return: none
+  */
 
-/** _print_float - prints float(s)
- * @stream: points to parameter input stream
- * Return: none
- */
-
-void _print_float(va_list stream)
+void _print_float(va_list params)
 {
-        float f;
-
-        f = va_arg(stream, double);
-        printf("%f", f);
+	printf("%f", va_arg(params, double));
 }
 
+/**
+  * _print_string - prints strings
+  * @params: va_list declaration
+  * Return: none
+  */
 
-/** _print_string - prints string(s)
- * @stream: points to parameter input stream
- * Return: none
- */
-
-void _print_string(va_list stream)
+void _print_string(va_list params)
 {
-        char *s;
+	char *str;
 
-	s = va_arg(stream, char *);
+	str = va_arg(params, char *);
 
-	if (s == NULL || *s == '\0')
+	if (!str)
 		printf("(nil)");
 
-	printf("%s", s);
+	printf("%s", str);
 }
 
-
-/** _print_all - watered down print() that handles types declared above
- * @format: points to parameter input stream
- * Return: none
- */
+/**
+  * print_all - prints parameters
+  * @format: string that has argument
+  * Return: none
+  */
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *separator = "";
-	const char *input_stream;
+	va_list params;
+	char *separator;
+	int i, j;
 
-	type_t controller[] = {
-	{'c', _print_char},
-	{'i', _print_int},
-	{'f', _print_float},
-	{'s', _print_string},
-	{0, NULL}
+	type_s controller[] = {
+		{"c", _print_char},
+		{"i", _print_int},
+		{"f", _print_float},
+		{"s", _print_string},
+		{NULL, NULL}
 	};
 
-	va_list stream;
-	input_stream = format;
-	va_start(stream, format);
-
-	while (input_stream != NULL  && *input_stream != '\0')
+	va_start(params, format);
+	separator = "";
+	i = 0;
+	while (format && format[i])
 	{
-		while (controller != NULL)
+		j = 0;
+		while (controller[j].type)
 		{
-			if (controller[i].cmd == *input_stream)
+			if (format[i] == *(controller[j].type))
 			{
 				printf("%s", separator);
-				controller[i].f(stream);
+				controller[j].f(params);
 				separator = ", ";
-				break;
 			}
-			i++;
+			j++;
 		}
-		input_stream++;
+		i++;
 	}
-	va_end(stream);
-	putchar('\n');
+	va_end(params);
+	printf("\n");
 }

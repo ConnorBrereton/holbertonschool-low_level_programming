@@ -1,23 +1,28 @@
 #ifndef _VARIADIC_FUNCTIONS_H_
 #define _VARIADIC_FUNCTIONS_H_
+#include <stdarg.h>
 
 /**
- * struct type - data structure for each type
+ * struct types - holds the argument type
+ * and pointer to function with argument
+ * type (our list of parameters).
  *
- * @cmd: ptr to array with type char represented
- * @f: function ptr used by controller[]
+ * @type: ptr to the char identifier
+ *
+ * @f: pointer to function of params
+ * in the ellipse.
  */
 
-typedef struct type
+typedef struct types
 {
-	char cmd;
-	void (*f)(va_list);
-} type_t;
+	char *type;
+	void (*f)(va_list params);
+} type_s;
 
-int _purchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
+int _putchar(char *);
 
 #endif /* _VARIADIC_FUNCTIONS_H_ */
