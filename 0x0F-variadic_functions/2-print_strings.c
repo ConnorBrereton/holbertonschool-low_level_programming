@@ -4,7 +4,7 @@
 #include <stdarg.h>
 
 /**
- * print_numbers - prints parameter-n ,' ' (0..n)-times
+ * print_strings - prints parameter-n ,' ' (0..n)-times
  * @separator: comma space value between parameters
  * @n: number of parameters
  * Return: none
