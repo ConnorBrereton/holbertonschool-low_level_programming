@@ -22,25 +22,17 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	/* sets pointer to first parameter */
 	va_start(list, n);
 
-	/* case: separator is not null */
-	if (separator)
+	/* print num. sep. pattern */
+	for (i = 0; i < n; i++)
 	{
-		/* print num. sep. pattern */
-		for (i = 0; i < n - 1; i++)
-		{
-			printf("%d%s", va_arg(list, int), separator);
-		}
-		printf("%d\n", va_arg(list, int));
-	}
+		printf("%d", va_arg(list, int));
 
-	/* case: separator is null */
-	else
-	{
-		for (i = 0; i < n; i++)
-		{
-			printf("%d", va_arg(list, int));
-		}
-		printf("\n");
+		if (separator == NULL || separator == '\0')
+			continue;
+
+		if (i != (n - 1))
+			printf("%s", separator);
 	}
+	putchar('\n');
 	va_end(list);
 }
