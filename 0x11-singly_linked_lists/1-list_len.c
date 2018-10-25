@@ -18,9 +18,6 @@ size_t list_len(const list_t *h)
 
 	const list_t *head = h;
 
-	if (head == NULL)
-		return (1);
-
 	/* loop and count */
 	while (head != NULL)
 	{
