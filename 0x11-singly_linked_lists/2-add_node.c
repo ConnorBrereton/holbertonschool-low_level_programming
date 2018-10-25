@@ -37,7 +37,11 @@ list_t *add_node(list_t **head, const char *str)
 		temp->str = strdup(str);
 
 	/* calc length of new node string */
-	temp->len = (temp->str == NULL) ? 0 : strlen(str);
+	if (temp->str == NULL)
+		temp->len = 0;
+
+	else
+		temp->len = strlen(str);
 
 	/* reassign pointers */
 	temp->next = *head;
