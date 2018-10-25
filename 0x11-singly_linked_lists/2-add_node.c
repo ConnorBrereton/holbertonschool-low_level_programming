@@ -12,16 +12,16 @@
  *
  * @str: string in the node
  *
- * Return: address (success) 1 (fail)
+ * Return: address (success) NULL (fail)
  */
 
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *temp;
 
-	/* check for struct */
-	if (head == NULL)
-		return (NULL);
+	char *string;
+
+	int i = 0;
 
 	/* create & check new node */
 	temp = malloc(sizeof(list_t));
@@ -30,21 +30,23 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	/* fill node with data */
-	if (str == NULL)
-		temp->str = NULL;
+	string = strdup(str);
 
-	else
-		temp->str = strdup(str);
+	if (string == NULL)
+	{
+		free(string);
+		return (NULL);
+	}
 
 	/* calc length of new node string */
-	if (temp->str == NULL)
-		temp->len = 0;
+	while (str[i])
+		i++;
 
-	else
-		temp->len = strlen(str);
-
-	/* reassign pointers */
+	/* reassign data */
+	temp->str = string;
+	temp->len = i;
 	temp->next = *head;
+
 	*head = temp;
 
 	/* address of new node */
