@@ -20,6 +20,10 @@ size_t print_list(const list_t *h)
 	/* set HEAD to front of list */
 	const list_t *head = h;
 
+	/* check for HEAD fail */
+	if (head == NULL)
+		return (1);
+
 	/* loop through list */
 	while (head != NULL)
 	{
