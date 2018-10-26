@@ -22,39 +22,39 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	list_t *end = *head;
 
-	if (head == NULL)
-		return (NULL);
+	char *string;
+
+	int i;
 
 	tail = malloc(sizeof(list_t));
-
 	if (tail == NULL)
 		return (NULL);
 
-	/* fill node with data */
-	if (str == NULL)
-		tail->str = NULL;
-
-	else
-		tail->str = strdup(str);
-
-	/* tail node has no successor */
-	tail->next = NULL;
-
-	/* calc length of new node string */
-	tail->len = (tail->str == NULL) ? 0 : strlen(str);
-
-	/* case 1: one node */
-	if (*head == NULL)
+	string = strdup(str);
+	if (string == NULL)
 	{
-		*head = tail;
-		return (tail);
+		free(string);
+		return (NULL);
 	}
 
-	/* find last node */
-	while (end->next != NULL)
-		end = end->next;
+	/* calc length of new node string */
+	for (i = 0; str[i]; i++)
+		;
 
-	end->next = tail;
+	tail->str = string;
+	tail->len = i;
+	tail->next = NULL;
 
+	if (*head == NULL)
+		*head = tail;
+
+	else
+	{
+		/* find last node */
+		while (end->next != NULL)
+			end = end->next;
+
+		end->next = tail;
+	}
 	return (tail);
 }
