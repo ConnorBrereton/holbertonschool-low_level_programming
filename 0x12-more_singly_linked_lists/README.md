@@ -4,10 +4,10 @@ These functions handle more advanced operations such as popping, searching for a
 # Time/Space Analysis
 | Program       | Time          | Space          |
 | ------------- | ------------- | -------------- |
-| Print List    | O(n)          |                |
-| Return Count  | O(1)          |                |
-| Append Front  | O(1)          |                |
-| Append End    | O(n)          |                |
+| Print List    | O(n)          | O(n)           |
+| Return Count  |               |                |
+| Append Front  |               |                |
+| Append End    |               |                |
 | Free List     |               |                |
 | ^ & Set Head  |               |                |
 | Pop & Return  |               |                |
