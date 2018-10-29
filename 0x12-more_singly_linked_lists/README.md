@@ -5,7 +5,7 @@ These functions handle more advanced operations such as popping, searching for a
 | Program       | Time          | Space          |
 | ------------- | ------------- | -------------- |
 | Print List    | O(n)          | O(n)           |
-| Return Count  |               |                |
+| Return Count  | O(n)          | O(n)           |
 | Append Front  |               |                |
 | Append End    |               |                |
 | Free List     |               |                |
