@@ -7,7 +7,7 @@ These functions handle more advanced operations such as popping, searching for a
 | Print List    | O(n)          | O(n)           |
 | Return Count  | O(n)          | O(n)           |
 | Append Front  | O(1)          | O(n)           |
-| Append End    |               |                |
+| Append End    | O(n)          | O(n)           |
 | Free List     |               |                |
 | ^ & Set Head  |               |                |
 | Pop & Return  |               |                |
