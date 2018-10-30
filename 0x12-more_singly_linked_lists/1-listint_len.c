@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 
-/** 
+/**
  * listint_len - Counts up number of nodes
  *
  * @h: pointer to the first node
