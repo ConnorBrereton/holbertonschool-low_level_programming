@@ -4,7 +4,7 @@ These functions handle more advanced operations such as popping, searching for a
 # Time/Space Analysis
 | Program       | Time          | Space          |
 | ------------- | ------------- | -------------- |
-| Print List    | O(n)          | O(n)           |
+| Print List    | O(n)          | O(1)           |
 | Return Count  | O(n)          | O(n)           |
 | Append Front  | O(1)          | O(n)           |
 | Append End    | O(n)          | O(n)           |
