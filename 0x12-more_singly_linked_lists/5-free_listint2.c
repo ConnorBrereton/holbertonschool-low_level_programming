@@ -6,29 +6,22 @@
  * free_listint2 - Free linked list and set head
  * to NULL at the end
  *
- * @head: Pointer to first node
+ * @head: Pointer to pointer that points to first node
  *
  * Return: none
  */
 
 void free_listint2(listint_t **head)
 {
-	listint_t *cur = *head;
 	listint_t *nxt;
 
 	if (head == NULL || *head == NULL)
 		return;
 
-	while (cur != NULL)
+	/* set nxt +1 and delete head which is nxt - 1 */
+	for (nxt = (*head)->next; *head != NULL; *head = nxt)
 	{
-		/* set ahead to avoid segfault */
-		nxt = cur->next;
-
-		/* free the current node */
-		free(cur);
-
-		/* update position */
-		cur = nxt;
+		nxt = (*head)->next;
+		free(*head);
 	}
-	*head = NULL;
 }
