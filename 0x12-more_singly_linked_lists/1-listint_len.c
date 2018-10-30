@@ -5,9 +5,9 @@
 /**
  * listint_len - Counts up number of nodes
  *
- * @h: pointer to the first node
+ * @h: Pointer to the first node
  *
- * Return: count (success) 1 (fail)
+ * Return: count (success) 0 (fail)
  */
 
 size_t listint_len(const listint_t *h)
@@ -15,12 +15,12 @@ size_t listint_len(const listint_t *h)
 	size_t len = 0;
 
 	if (h == NULL)
-		return (1);
+		return (0);
 
 	while (h != NULL)
 	{
-		len++;
 		h = h->next;
+		len++;
 	}
 
 	return (len);
