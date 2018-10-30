@@ -20,11 +20,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	cur = *head;
 
-	if (!head)
+	if (head == NULL)
 		return (NULL);
 
 	temp = malloc(sizeof(listint_t));
-	if (!temp)
+	if (temp == NULL)
 		return (NULL);
 
 	temp->n = n;
