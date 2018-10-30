@@ -11,7 +11,7 @@ These functions handle more advanced operations such as popping, searching for a
 | Free List     | O(n)          | O(n)           |
 | ^ & Set Head  | O(n)          | O(n)           |
 | Pop & Return  | O(1)          | O(n)           |
-| Search        |               |                |
+| Search        | O(n)          | O(n)           |
 | Sum Elements  |               |                |
 | Insert        |               |                |
 | Delete        |               |                |
