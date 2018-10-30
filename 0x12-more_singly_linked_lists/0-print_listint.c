@@ -7,22 +7,18 @@
  *
  * @h: pointer to the first node
  *
- * Return: count (success) 1 (fail)
+ * Return: count (success) 0 (fail)
  */
 
 size_t print_listint(const listint_t *h)
 {
-	size_t count = 0;
+	size_t count;
 
 	if (!h)
-		return (1);
+		return (0);
 
-	while (h)
-	{
+	for (count = 0; h != NULL; h = h->next, count++)
 		printf("%d\n", h->n);
-		count++;
-		h = h->next;
-	}
 
 	return (count);
 }
