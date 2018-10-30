@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * *insert_nodeint_at_index - Inserts node anywhere in list
+ * delete_nodeint_at_index - Deletes node anywhere in list
  *
  * @head: Pointer to first node
  * @index: Index to insert node at
