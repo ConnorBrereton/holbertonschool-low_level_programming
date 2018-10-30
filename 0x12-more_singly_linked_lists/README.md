@@ -12,7 +12,7 @@ These functions handle more advanced operations such as popping, searching for a
 | ^ & Set Head  | O(n)          | O(n)           |
 | Pop & Return  | O(1)          | O(n)           |
 | Search        | O(n)          | O(n)           |
-| Sum Elements  |               |                |
+| Sum Elements  | o(n)          | O(n)           |
 | Insert        |               |                |
 | Delete        |               |                |
 | Reverse       |               |                |
