@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <stddef.h>
 
 /**
  * print_listint- Prints the nodes values in order
@@ -12,14 +12,14 @@
 
 size_t print_listint(const listint_t *h)
 {
-	unsigned int count = 0;
+	size_t count = 0;
 
 	if (!h)
 		return (1);
 
 	while (h != NULL)
 	{
-		if (h->n)
+		if (h->n != NULL)
 		{
 			printf("%d\n", h->n);
 			count++;
