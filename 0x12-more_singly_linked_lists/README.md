@@ -10,7 +10,7 @@ These functions handle more advanced operations such as popping, searching for a
 | Append End    | O(n)          | O(n)           |
 | Free List     | O(n)          | O(n)           |
 | ^ & Set Head  | O(n)          | O(n)           |
-| Pop & Return  |               |                |
+| Pop & Return  | O(1)          | O(n)           |
 | Search        |               |                |
 | Sum Elements  |               |                |
 | Insert        |               |                |
