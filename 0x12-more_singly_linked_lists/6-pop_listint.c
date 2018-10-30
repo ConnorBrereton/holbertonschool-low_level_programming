@@ -19,11 +19,11 @@ int pop_listint(listint_t **head)
 	if (head == NULL || *head == NULL)
 		return (0);
 
-	val = (*head) -> n;
+	val = (*head)->n;
 
-	current = (*head) -> next;
+	current = (*head)->next;
 	free(*head);
 	*head = current;
 
 	return (val);
-}	
+}
