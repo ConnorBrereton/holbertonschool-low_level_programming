@@ -12,8 +12,8 @@ These functions handle more advanced operations such as popping, searching for a
 | ^ & Set Head  | O(n)          | O(n)           |
 | Pop & Return  | O(1)          | O(n)           |
 | Search        | O(n)          | O(n)           |
-| Sum Elements  | o(n)          | O(n)           |
-| Insert        |               |                |
+| Sum Elements  | O(n)          | O(n)           |
+| Insert        | O(n)          | O(n)           |
 | Delete        |               |                |
 | Reverse       |               |                |
 | Print Safe    |               |                |
