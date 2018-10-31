@@ -15,7 +15,7 @@ These functions handle more advanced operations such as popping, searching for a
 | Sum Elements  | O(n)          | O(n)           |
 | Insert        | O(n)          | O(n)           |
 | Delete        | O(n)          | O(n)           |
-| Reverse       |               |                |
+| Reverse       | O(n)          | O(n)           |
 | Print Safe    |               |                |
 | Free Safe     |               |                |
 | Find Loop     |               |                |
