@@ -18,4 +18,4 @@ These functions handle more advanced operations such as popping, searching for a
 | Reverse       | O(n)          | O(n)           |
 | Print Safe    |               |                |
 | Free Safe     |               |                |
-| Find Loop     |               |                |
+| Find Loop     | O(n)          | O(1)           |
