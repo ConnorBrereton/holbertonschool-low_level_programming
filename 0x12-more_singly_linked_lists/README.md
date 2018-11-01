@@ -16,6 +16,4 @@ These functions handle more advanced operations such as popping, searching for a
 | Insert        | O(n)          | O(n)           |
 | Delete        | O(n)          | O(n)           |
 | Reverse       | O(n)          | O(n)           |
-| Print Safe    |               |                |
-| Free Safe     |               |                |
-| Find Loop     | O(n)          | O(1)           |
+| Find Loop     | O(n^2)        | O(1)           |
