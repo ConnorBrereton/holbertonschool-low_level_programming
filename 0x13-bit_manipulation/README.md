@@ -4,7 +4,7 @@ Various functions that you would see in an embedded systems course or project th
 # Time/Space Analysis
 | Program       | Time          | Space          |
 | ------------- | ------------- | -------------- |
-| bin2uint      |               |                |
+| bin2uint      | O(n)          | O(1)           |
 | int2bin       |               |                |
 | idx2val       |               |                |
 | idx2one       |               |                |
