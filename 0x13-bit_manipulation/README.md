@@ -8,5 +8,5 @@ Various functions that you would see in an embedded systems course or project th
 | int2bin       | O(n)          | O(1)           |
 | idx2val       | O(n)          | O(1)           |
 | idx2one       | O(1)          | O(1)           |
-| idxtozero     |               |                |
+| idxtozero     | O(1)          | O(1)           |
 | flip2trans    |               |                |
