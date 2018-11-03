@@ -7,6 +7,6 @@ Various functions that you would see in an embedded systems course or project th
 | bin2uint      | O(n)          | O(1)           |
 | int2bin       | O(n)          | O(1)           |
 | idx2val       | O(n)          | O(1)           |
-| idx2one       |               |                |
+| idx2one       | O(1)          | O(1)           |
 | idxtozero     |               |                |
 | flip2trans    |               |                |
