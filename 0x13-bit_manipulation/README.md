@@ -5,7 +5,7 @@ Various functions that you would see in an embedded systems course or project th
 | Program       | Time          | Space          |
 | ------------- | ------------- | -------------- |
 | bin2uint      | O(n)          | O(1)           |
-| int2bin       |               |                |
+| int2bin       | O(n)          | O(1)           |
 | idx2val       |               |                |
 | idx2one       |               |                |
 | idxtozero     |               |                |
