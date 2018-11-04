@@ -15,5 +15,5 @@ int get_endianness(void)
 	char *s = (char *) &n;
 
 	/* return value 0 or 1 */
-	return (int) *s;
+	return ((int) *s);
 }
