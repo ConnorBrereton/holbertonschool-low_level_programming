@@ -15,7 +15,7 @@ unsigned int counter(unsigned long int x)
 	while (x)
 	{
 		count += x & 1UL;
-		n >>= 1;
+		x >>= 1;
 	}
 
 	return (count);
