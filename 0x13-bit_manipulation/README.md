@@ -10,3 +10,4 @@ Various functions that you would see in an embedded systems course or project th
 | idx2one       | O(1)          | O(1)           |
 | idxtozero     | O(1)          | O(1)           |
 | xor2num       | O(n)          | O(1)           |
+| endian        | O(1)          | O(1)           |
