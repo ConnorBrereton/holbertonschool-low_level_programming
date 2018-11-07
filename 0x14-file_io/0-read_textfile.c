@@ -40,17 +40,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (check_read < 0)
 	{
 		free(buffer);
-		close(check_open);
 		return (0);
 	}
 
 	check_write = write(STDOUT_FILENO, buffer, check_read);
 
-	if ((unsigned int) check_write != letters)
-		return (0);
-
 	free(buffer);
 	close(check_open);
 
-	return (check_read);
+	if ((unsigned int) check_write != letters)
+		return (0);
+
+	return ((size_t) check_read);
 }
