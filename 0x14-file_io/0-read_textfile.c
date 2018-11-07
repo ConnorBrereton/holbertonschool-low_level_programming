@@ -44,7 +44,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	check_write = write(STDOUT_FILENO, buffer, letters);
+	check_write = write(STDOUT_FILENO, buffer, check_read);
 
 	if ((unsigned int) check_write != letters)
 		return (0);
