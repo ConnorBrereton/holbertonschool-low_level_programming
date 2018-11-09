@@ -37,7 +37,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	check_read = read(check_open, buffer, letters);
-
 	if (check_read < 0)
 	{
 		free(buffer);
@@ -51,7 +50,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	free(buffer);
 	close(check_open);
 
-	if (check_write < 0 || (unsigned int) check_write != letters)
+	if (check_write < 0)
 		return (0);
 
 	return ((size_t) check_read);
