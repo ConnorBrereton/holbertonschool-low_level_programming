@@ -18,6 +18,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int check_open, check_read, check_write;
 
+	int i = 0;
+
 	char *buffer;
 
 	if (!filename)
@@ -35,7 +37,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	check_read = read(check_open, buffer, letters);
-	close(check_open);
 
 	if (check_read < 0)
 	{
@@ -43,8 +44,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	check_write = write(STDOUT_FILENO, buffer, check_read);
+	while (*(buffer + i))
+		i++;
+
+	check_write = write(STDOUT_FILENO, buffer, i);
 	free(buffer);
+	close(check_open);
 
 	if (check_write < 0 || (unsigned int) check_write != letters)
 		return (0);
