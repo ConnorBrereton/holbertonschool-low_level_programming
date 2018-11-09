@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -92,7 +91,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	check_read = read(check_open1, buffer, sizeof(buffer));
+	check_read = read(check_open1, buffer, 1024);
 	if (check_read < 0)
 	{
 		err_read(argv[1]);
