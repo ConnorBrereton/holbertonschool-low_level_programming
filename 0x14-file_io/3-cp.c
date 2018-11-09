@@ -17,12 +17,11 @@ void err_wr(char *fd);
 
 int check_close(int fd)
 {
-	if (close(fd) < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		return (-1);
-	}
-	return (1);
+	ret = close(fd);
+	if (ret < 0)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd;
+
+	return (ret);
 }
 
 
