@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	char *buffer;
 
-	if (!filename || letters == 0)
+	if (!filename)
 		return (0);
 
 	check_open = open(filename, O_RDONLY);
@@ -46,7 +46,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	check_write = write(STDOUT_FILENO, buffer, check_read);
 	free(buffer);
 
-	if ((unsigned int) check_write != letters)
+	if (check_write < 0 || (unsigned int) check_write != letters)
 		return (0);
 
 	return ((size_t) check_read);
