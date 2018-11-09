@@ -19,7 +19,7 @@ int check_close(int fd)
 {
 	if (close(fd) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd;
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		return (-1);
 	}
 
@@ -92,8 +92,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	while (check_read)
-	{
+	do {
 		check_read = read(check_open1, buffer, 1024);
 		if (check_read < 0)
 		{
@@ -111,7 +110,7 @@ int main(int argc, char **argv)
 			close(check_open2);
 			exit(99);
 		}
-	}
+	} while (check_read >= 1024);
 
 	if (check_close(check_open1) < 0)
 		exit(100);
