@@ -91,22 +91,25 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	check_read = read(check_open1, buffer, 1024);
-	if (check_read < 0)
+	while (check_read)
 	{
-		err_read(argv[1]);
-		close(check_open1);
-		close(check_open2);
-		exit(98);
-	}
+		check_read = read(check_open1, buffer, 1024);
+		if (check_read < 0)
+		{
+			err_read(argv[1]);
+			close(check_open1);
+			close(check_open2);
+			exit(98);
+		}
 
-	check_write = write(check_open2, buffer, check_read);
-	if (check_write < 0)
-	{
-		err_wr(argv[2]);
-		close(check_open1);
-		close(check_open2);
-		exit(99);
+		check_write = write(check_open2, buffer, check_read);
+		if (check_write < 0)
+		{
+			err_wr(argv[2]);
+			close(check_open1);
+			close(check_open2);
+			exit(99);
+		}
 	}
 
 	if (check_close(check_open1) < 0)
