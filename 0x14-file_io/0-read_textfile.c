@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * read_textfile - Reads n-bytes from file to stdout
@@ -46,8 +47,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	check_write = write(STDOUT_FILENO, buffer, check_read);
 	free(buffer);
 
-	if ((unsigned int) check_write != letters)
+	if (check_write < 0)
 		return (0);
 
-	return ((size_t) check_read);
+	return (check_print);
 }
