@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Compiling $PYFILE ..."
+python3 -c "import py_compile as lib; lib.compile('$PYFILE', '$PYFILE' + 'c')"
