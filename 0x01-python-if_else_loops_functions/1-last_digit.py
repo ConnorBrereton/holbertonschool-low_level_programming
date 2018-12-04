@@ -4,8 +4,6 @@ number = random.randint(-10000, 10000)
 
 ld = str(number)
 digit = int(ld[-1:])
-print(number)
-print(digit)
 
 print("Last digit of {:d} is {:d}".format(number, digit), end=' and is ')
 
