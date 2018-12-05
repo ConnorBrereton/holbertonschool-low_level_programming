@@ -9,11 +9,13 @@ if __name__ == "__main__":
     if args == 0:
         print("0 arguments.")
 
-    if args == 1:
-        print("1 argument:")
+    else:
 
-    if args > 1:
-        print("{:d}: arguments:".format(args))
+        if args == 1:
+            print("1 argument:")
 
-    for i in range(1, args + 1):
-        print("{:d}: {:s}".format(i, argv[i]))
+        else:
+            print("{:d}: arguments:".format(args))
+
+        for i in range(1, args + 1):
+            print("{:d}: {:s}".format(i, argv[i]))
