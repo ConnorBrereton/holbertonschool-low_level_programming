@@ -6,7 +6,7 @@
  *
  * @h: Pointer to the first node in SLL
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: qty (success) 0 (failure)
  */
 
 size_t print_dlistint(const dlistint_t *h)
