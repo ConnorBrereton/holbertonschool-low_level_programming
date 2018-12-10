@@ -1,9 +1,13 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
+ * delete_dnodeint_at_index - Deletes node at an index
  *
- * Return: Always EXIT_SUCCESS.
+ * @head: Double pointer to first node in DLL
+ *
+ * @index: Index to ID node
+ *
+ * Return: -1 (failure) 1 (success)
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
@@ -26,13 +30,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	while (cur->next && index-- > 1)
 		cur = cur->next;
 
-	if (index > 1 || cur->next == NULL)
+	if (index > 1 || !(cur->next))
 		return (-1);
 
 	del = cur->next; /* set to node to delete */
 	cur->next = del->next;
 
-	if (cur->next != NULL)
+	if (cur->next)
 		cur->next->prev = cur;
 
 	free(del);
