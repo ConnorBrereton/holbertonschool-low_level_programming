@@ -30,6 +30,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	while (cur->next && idx-- > 1) /* move to node before idx */
 		cur = cur->next;
 
+	if (idx > 1) /* case: idx > size DLL */
+		return (NULL);
+
 	newnode = malloc(sizeof(dlistint_t));
 	if (!newnode)
 		return (NULL);
@@ -39,7 +42,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newnode->prev = cur;
 	cur->next = newnode;
 
-	if (newnode->next != NULL)
+	if (newnode->next)
 		cur->next->prev = newnode;
 
 	return (newnode);
