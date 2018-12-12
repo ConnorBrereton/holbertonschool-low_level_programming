@@ -3,7 +3,7 @@
 
 def multiple_returns(sentence):
 
-    if sentence is None or len(sentence) is 0:
+    if not sentence:
         char = None
 
     else:
