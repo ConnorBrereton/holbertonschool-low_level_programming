@@ -22,7 +22,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         s = tuple_a[0] + 0, 0 + 0
 
     elif la == 1 and lb == 1:
-        s = tuple_a[0] + tuple_b [0], 0 + 0
+        s = tuple_a[0] + tuple_b[0], 0 + 0
 
     elif la == 1 and lb == 2:
         s = tuple_a[0] + tuple_b[0], 0 + tuple_b[1]
