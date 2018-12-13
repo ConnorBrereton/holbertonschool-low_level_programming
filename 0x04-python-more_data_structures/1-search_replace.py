@@ -4,10 +4,9 @@
 def search_replace(my_list, search, replace):
 
     """
-    fail checks
+    fail check
     """
-
-    if my_list is None or len(my_list) == 0:
+    if not my_list:
         return None
 
     result = list(map(lambda e: e if e != search else replace, my_list))
