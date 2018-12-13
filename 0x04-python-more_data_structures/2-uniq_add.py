@@ -6,8 +6,7 @@ def uniq_add(my_list=[]):
     """
     fail check
     """
-    if my_list is None or len(my_list) == 0:
-        return None
+    if not my_list:
+        return 0
 
-    result = sum(set(my_list))
-    return result
+    return sum(set(my_list))
