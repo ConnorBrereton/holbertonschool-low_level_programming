@@ -4,11 +4,11 @@
 def list_division(my_list_1, my_list_2, list_length):
 
     new_list = []
-    result = 0
 
     for e in range(list_length):
 
         try:
+            result = 0
             result = my_list_1[e] / my_list_2[e]
 
         except (TypeError, ValueError):
