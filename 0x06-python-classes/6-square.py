@@ -50,7 +50,7 @@ class Square:
         return self.__position
 
     """Setter method for `position` attribute
- 
+
     Returns:
         Private attribute `position`
     """
@@ -60,16 +60,22 @@ class Square:
         if isinstance(position, tuple):
             for i in position:
                 if i < 0:
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError("position must be a" +
+                                    "tuple of 2 positive integers")
 
                 else:
                     continue
 
             if len(position) is not 2:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError("position must be a" +
+                                "tuple of 2 positive integers")
 
-            if (not isinstance(position[0], int) or isinstance(position[1], int)):
-                raise TypeError("position must be a tuple of 2 positive integers")
+            if (
+                 not isinstance(position[0], int) or
+                 not isinstance(position[1], int)
+            ):
+                    raise TypeError("position must be a" +
+                                    "tuple of 2 positive integers")
 
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -92,16 +98,12 @@ class Square:
     """
     def my_print(self):
 
-        if self.__size is not 0:
-            for k in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                for j in range(self.__position[0]):
-                    print(" ", end="")
-                for l in range(self.__size):
-                    print("#", end="")
-
-                print()
-
-        else:
+        if self.size == 0:
             print()
+
+        for i in range(self.__position[1]):
+            print()
+
+        for j in range(self.__size):
+            print("_" * self.__position[0], end="")
+            print("#" * self.size)
