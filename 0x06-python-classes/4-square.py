@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that contains the Square class"""
 
+
 class Square:
     """Initialize the Square instance
 
@@ -11,7 +12,6 @@ class Square:
     def __init__(self, size=0):
         self.size = size
 
-
     """Getter method for size attribute
 
     Returns:
@@ -21,7 +21,6 @@ class Square:
     def size(self):
 
         return self.__size
-
 
     """Setter method for size attribute
 
@@ -34,11 +33,10 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
 
         self.__size = value
-
 
     """Handles computation
 
