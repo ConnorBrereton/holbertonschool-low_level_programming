@@ -10,8 +10,8 @@ class Square:
     """
 
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     """Getter method for `size` attribute
 
@@ -58,6 +58,19 @@ class Square:
     def position(self, position):
 
         if isinstance(position, tuple):
+
+            if len(position) is not 2:
+                raise TypeError("position must be a" +
+                                "tuple of 2 positive integers")
+
+            if not isinstance(position[0], int):
+                raise TypeError("position must be a" +
+                                "tuple of 2 positive integers")
+
+            if not isinstance(position[1], int):
+                raise TypeError("position must be a" +
+                                "tuple of 2 positive integers")
+
             for i in position:
                 if i < 0:
                     raise TypeError("position must be a" +
@@ -65,17 +78,6 @@ class Square:
 
                 else:
                     continue
-
-            if len(position) is not 2:
-                raise TypeError("position must be a" +
-                                "tuple of 2 positive integers")
-
-            if (
-                 not isinstance(position[0], int) or
-                 not isinstance(position[1], int)
-            ):
-                    raise TypeError("position must be a" +
-                                    "tuple of 2 positive integers")
 
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
