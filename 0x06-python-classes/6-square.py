@@ -43,7 +43,7 @@ class Square:
         Private attribute `size`
     """
     @size.setter
-    def size(self, size):
+    def size(self, value):
 
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -51,7 +51,7 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
 
-        self.__size = size
+        self.__size = value
 
     """Getter method for `position` attribute
 
@@ -69,29 +69,29 @@ class Square:
         Private attribute `position`
     """
     @position.setter
-    def position(self, position):
+    def position(self, value):
 
-        if type(position) is not tuple:
+        if type(value) is not tuple:
             raise TypeError("position must be a" +
                             "tuple of 2 positive integers")
 
-        if len(position) is not 2:
+        if len(value) is not 2:
             raise TypeError("position must be a" +
                             "tuple of 2 positive integers")
 
-        if type(position[0]) is not int:
+        if type(value[0]) is not int:
             raise TypeError("position must be a" +
                             "tuple of 2 positive integers")
 
-        if type(position[1]) is not int:
+        if type(value[1]) is not int:
             raise TypeError("position must be a" +
                             "tuple of 2 positive integers")
 
-        if position[0] < 0 or position[1] < 0:
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a" +
                             "tuple of 2 positive integers")
 
-        self.__position = position
+        self.__position = value
 
     """Handles computation
 
