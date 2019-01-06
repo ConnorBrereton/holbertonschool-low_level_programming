@@ -73,9 +73,6 @@ class SinglyLinkedList:
             self.__head = Node(value, self.__head)
             return
 
-        if type(value) is not int:
-            raise TypeError("data must be an integer")
-
         new_node = Node(value, self.__head)
         self.__head = new_node
 
