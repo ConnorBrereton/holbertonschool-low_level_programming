@@ -20,10 +20,13 @@ int main(int ac, char **av)
     printf("\n(printed chars: %li)\n", n);
     n = read_textfile(av[1], 1024);
     printf("\n(printed chars: %li)\n", n);
+    
     n = read_textfile("textfile_0", 100);
     printf("\n(printed chars: %li)\n", n);
+    
     n = read_textfile("textfile_0", 10000);
     printf("\n(printed chars: %li)\n", n);
+    
     n = read_textfile("textfile_0", 0);
     printf("\n(printed chars: %li)\n", n);
     n = read_textfile(NULL, 10);
