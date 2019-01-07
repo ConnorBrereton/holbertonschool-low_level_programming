@@ -1,0 +1,37 @@
+000000000040059d <main>:
+  40059d:	55                   	push   %rbp
+  40059e:	48 89 e5             	mov    %rsp,%rbp
+  4005a1:	48 83 ec 20          	sub    $0x20,%rsp
+  4005a5:	89 7d ec             	mov    %edi,-0x14(%rbp)
+  4005a8:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  4005ac:	83 7d ec 02          	cmpl   $0x2,-0x14(%rbp)
+  4005b0:	74 20                	je     4005d2 <main+0x35>
+  4005b2:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  4005b6:	48 8b 00             	mov    (%rax),%rax
+  4005b9:	48 89 c6             	mov    %rax,%rsi
+  4005bc:	bf a4 06 40 00       	mov    $0x4006a4,%edi
+  4005c1:	b8 00 00 00 00       	mov    $0x0,%eax
+  4005c6:	e8 75 fe ff ff       	callq  400440 <printf@plt>
+  4005cb:	b8 01 00 00 00       	mov    $0x1,%eax
+  4005d0:	eb 41                	jmp    400613 <main+0x76>
+  4005d2:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  4005d6:	48 83 c0 08          	add    $0x8,%rax
+  4005da:	48 8b 00             	mov    (%rax),%rax
+  4005dd:	48 89 c7             	mov    %rax,%rdi
+  4005e0:	e8 81 ff ff ff       	callq  400566 <checksum>
+  4005e5:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  4005e9:	48 81 7d f8 d4 0a 00 	cmpq   $0xad4,-0x8(%rbp)
+  4005f0:	00 
+  4005f1:	74 11                	je     400604 <main+0x67>
+  4005f3:	bf b8 06 40 00       	mov    $0x4006b8,%edi
+  4005f8:	e8 33 fe ff ff       	callq  400430 <puts@plt>
+  4005fd:	b8 01 00 00 00       	mov    $0x1,%eax
+  400602:	eb 0f                	jmp    400613 <main+0x76>
+  400604:	bf c7 06 40 00       	mov    $0x4006c7,%edi
+  400609:	e8 22 fe ff ff       	callq  400430 <puts@plt>
+  40060e:	b8 00 00 00 00       	mov    $0x0,%eax
+  400613:	c9                   	leaveq 
+  400614:	c3                   	retq   
+  400615:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  40061c:	00 00 00 
+  40061f:	90                   	nop

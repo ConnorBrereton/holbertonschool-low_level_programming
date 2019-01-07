@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo apt-get upgrade	#upgrade system if available
+sudo apt-get update	#update packages if available
+sudo apt-get install libc6-dev-i386 -y	#install the libc6 package dependency
