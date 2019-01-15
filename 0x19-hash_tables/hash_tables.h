@@ -59,4 +59,4 @@ char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 
 
-#endif
+#endif /* _HASH_H_ */
