@@ -6,7 +6,7 @@
  *
  * @size: size of the table
  *
- * Return: Pointer to the start of table
+ * Return: Pointer to table (success) NULL (failure)
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
@@ -22,6 +22,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (!new_table)
 		return (NULL);
 
+	new_table->size = size;
+
 	/* create the head node | destroy the head node in each index */
 	new_table->array = malloc(size * sizeof(hash_node_t *));
 
@@ -30,8 +32,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(new_table);
 		return (NULL);
 	}
-
-	new_table->size = size;
 
 	/* initialize each array head node to NULL */
 	for (i = 0; i < size; i++)
