@@ -71,51 +71,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	char *cp_val; /* Used to hold the correlating @value */
 
-	/**
-	 * --fail cases--
-	 * hashtable is null
-	 * hashtable->array is null
-	 * key is NULL
-	 * value is NULL
-	 * tablesize is zero
-	 * key size is 0
-	 */
-
-	if (!(ht) || !(ht->array) || ht->size == 0 || !(key) || strlen(key) == 0 || !(value))
+	if (!ht || !ht->array || ht->size == 0 || !key || strlen(key) == 0 || !value)
 		return (0);
 
-	/* Get and store the index of new_node */
-	idx = key_index((const unsigned char *)key, ht->size);
+	idx = key_index((const unsigned char *)key, ht->size); /* Get/store index */
 	lookup = ht->array[idx];
 
-	/* Handles case where @key does exist */
-	while (lookup)
+	while (lookup) /* @key exists */
 	{
 		if (strcmp(key, lookup->key) == 0) /* match found */
 		{
 			cp_val = strdup(value);
-
 			if (!cp_val)
 			{
 				free(lookup->value);
 				return (0);
 			}
-
 			lookup->value = cp_val;
 			return (1);
 		}
-
 		lookup = lookup->next;
 	}
 
-	/* Handles case where @key DNE */
-	new_node = create_node(key, value);
-
+	new_node = create_node(key, value); /* @key DNE */
 	if (!new_node)
 		return (0);
 
-	/* Add new_node to front of our array index */
-	new_node->next = ht->array[idx];
+	new_node->next = ht->array[idx]; /* add node to front */
 	ht->array[idx] = new_node;
 	return (1);
 }

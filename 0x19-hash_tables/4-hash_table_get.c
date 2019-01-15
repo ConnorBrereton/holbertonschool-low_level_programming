@@ -8,7 +8,7 @@
  *
  * @ht: Pointer to table struct
  *
- * @key: 
+ * @key: Key that correlates to some key:value pair
  *
  * Return: value (success) NULL (failure)
  */
@@ -18,16 +18,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	unsigned int idx; /* Index on table that matches key */
 
-	/**
-         * --fail cases--
-         * hashtable is null
-         * hashtable->array is null
-         * key is NULL
-         * value is NULL
-         * tablesize is zero
-         * key size is 0
-         */
-
+	/* fail cases */
 	if (!ht || !(ht->array) || !(key) || strlen(key) == 0)
 		return (NULL);
 
@@ -39,7 +30,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	while (search)
 	{
 		if (strcmp(key, search->key) == 0)
-			return search->value;
+			return (search->value);
 
 		search = search->next;
 	}

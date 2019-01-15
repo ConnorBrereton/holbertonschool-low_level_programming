@@ -18,7 +18,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	/* create the head node | destroy the head node in each index */
-	if ((new_table->array = malloc(size * sizeof(hash_node_t*))) == NULL)
+	new_table->array = malloc(size * sizeof(hash_node_t *));
+
+	if (!(new_table->array))
 	{
 		free(new_table->array);
 		return (NULL);
@@ -30,5 +32,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 	for (i = 0; i < size; i++)
 		new_table->array[i] = NULL;
 
-	return new_table;
+	return (new_table);
 }
