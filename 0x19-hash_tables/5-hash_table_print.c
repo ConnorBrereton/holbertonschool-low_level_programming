@@ -15,7 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0;
 
-	int flag = 1;
+	char flag = 1;
 
 	hash_node_t *cur;
 
