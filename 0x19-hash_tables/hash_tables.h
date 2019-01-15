@@ -52,7 +52,11 @@ hash_node_t *create_node(const char *key, const char *value);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
 
+/* Searches and returns value based on key */
+char *hash_table_get(const hash_table_t *ht, const char *key);
 
+/* Prints all key:value pairs */
+void hash_table_print(const hash_table_t *ht);
 
 
 #endif
