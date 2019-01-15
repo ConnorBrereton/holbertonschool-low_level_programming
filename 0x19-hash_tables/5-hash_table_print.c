@@ -33,10 +33,10 @@ void hash_table_print(const hash_table_t *ht)
 			if (flag == 0)
 				printf(", ");
 
-			printf("\'%s\': \'%s\'", cur->key, cur->value);
+			printf("'%s': '%s'", cur->key, cur->value);
 
-			cur = cur->next;
 			flag = 0; /* reset each iteration to ensure comma-separated K:V pairs */
+			cur = cur->next;
 		}
 		i++;
 	}
