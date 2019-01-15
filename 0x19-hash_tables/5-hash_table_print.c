@@ -13,14 +13,12 @@
 
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i = 0;
-
-	char flag = 1;
+	unsigned long int i = 0, flag = 1;
 
 	hash_node_t *cur;
 
 	if (!ht || !(ht->array))
-		printf("{}");
+		return;
 
 	printf("{");
 
