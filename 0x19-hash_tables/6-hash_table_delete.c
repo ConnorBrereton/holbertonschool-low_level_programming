@@ -1,9 +1,11 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
+ * hash_table_delete - Frees up all hash table memory
  *
- * Return: Always EXIT_SUCCESS.
+ * @ht: Pointer to table area of table structure
+ *
+ * Return: none
  */
 
 void hash_table_delete(hash_table_t *ht)
