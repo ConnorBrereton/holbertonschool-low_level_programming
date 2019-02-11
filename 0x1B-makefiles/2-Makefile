@@ -3,7 +3,7 @@
 CC = gcc-4.8
 
 # loads all .c and .h files into dependency graph
-SRC = $(wildcard *.c)
+SRC = holberton.c main.c
 
 # object files from source code
 OBJ = $(SRC:.c=.o)
