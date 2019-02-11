@@ -1,0 +1,16 @@
+# Makefile that utilizes CC, SRC, OBJ, and NAME
+
+CC = gcc-4.8
+
+# loads all .c and .h files into dependency graph
+SRC = $(wildcard *.c)
+
+# object files from source code
+OBJ = $(SRC:.c=.o)
+
+# executable's name
+NAME = holberton
+
+# don't recompile unless object code changed
+all: $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
