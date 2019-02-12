@@ -1,0 +1,33 @@
+# Compiles to ISO standards and handles all cleanup stages
+
+# Set variables
+CC = gcc-4.8
+
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+SRC = main.c holberton.c
+
+OBJ = $(SRC:.c=.o)
+
+NAME = holberton
+
+RM = rm
+
+# Prevent exe overwriting
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+# Declare rules to ignore targets
+.PHONY: clean oclean fclean
+
+# Define rules case by case basis
+clean:
+	-$(RM) -f *~ $(NAME)
+
+oclean:
+	-$(RM) -f $(OBJ)
+
+fclean: clean oclean
+
+# Cleanup and recompile
+re: oclean all
