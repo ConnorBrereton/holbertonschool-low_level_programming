@@ -1,0 +1,35 @@
+# Makefile for create and cleanup
+
+CC = gcc-4.8
+
+SRC = 0-main.c holberton.c
+
+# source code prefix matching object code
+OBJ = $(SRC:.c=*.o)
+
+NAME = holberton
+
+RM = rm
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# creates rules, not targets
+.PHONY: clean oclean fclean
+
+# forcefully remove emacs/vim files and executable
+# else continue
+clean:
+	-$(RM) -f *~ $(NAME)
+
+# forcefully remove object files
+# else continue
+oclean:
+	-$(RM) -f $(OBJ)
+
+# do clean & oclean
+# else continue
+fclean: clean oclean
+
+# remove object files & recompile source files
+re: oclean all
