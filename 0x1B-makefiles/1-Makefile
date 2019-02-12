@@ -2,7 +2,7 @@
 
 CC = gcc-4.8
 
-SRC = 0-main.c holberton.c
+SRC = main.c holberton.c
 
 all:
 	$(CC) $(SRC) -o holberton
