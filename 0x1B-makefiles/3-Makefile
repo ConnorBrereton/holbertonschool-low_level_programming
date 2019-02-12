@@ -2,7 +2,7 @@
 
 CC = gcc-4.8
 
-SRC = 0-main.c holberton.c
+SRC = main.c holberton.c
 
 # source code prefix matching object code
 OBJ = $(SRC:.c=*.o)
