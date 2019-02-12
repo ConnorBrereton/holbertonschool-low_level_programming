@@ -5,7 +5,7 @@ CC = gcc-4.8
 SRC = main.c holberton.c
 
 # source code prefix matching object code
-OBJ = $(SRC:.c=*.o)
+OBJ = $(SRC:.c=.o)
 
 NAME = holberton
 
